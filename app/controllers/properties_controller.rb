@@ -57,6 +57,9 @@ class PropertiesController < ApplicationController
     end
 
     def property_params
-      params.require(:property).permit(:property_name, :rent, :address, :age_of_a_building, :note)
+      params.require(:property).permit(:property_name, :rent, :address, :age_of_a_building, :note, 
+                                        stations_attributes: [:line_name, :station_name, :walking_time])
     end
+
+
 end
